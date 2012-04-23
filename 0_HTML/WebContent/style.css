@@ -21,6 +21,10 @@ body {
     font-family: sans;
 }
 
+#edit-form {
+	margin: 0px;
+}
+
 #edit-box {
     border: 1px #AAA solid;
     background-color: #FFF;
@@ -34,23 +38,19 @@ body {
 }
 
 #edit-box .body {
-	padding: 4px;
-	margin-bottom: -12px;
+	height: 68px;
 }
 
 #edit-box .body .left {
-	width: 354px;
+    float: left;
+    padding: 4px;
+    width: 356px;
 }
 
 #edit-box .body .right {
-	width: 10px;
-	position: relative;
-	left: 399px;
-	top: -25px;
-	float: left;
-	width: 36;
-	height: 69;
-	margin: -40;
+    float: left;
+    height: 69px;
+    width: 34px;
 }
 
 #edit-box .field-container {
@@ -94,17 +94,19 @@ body {
 }
 
 #bookmarks .bookmark {
-	margin-top: 8px;
-    border: 1px #AAA solid;
-    background-color: #FFF;
+    background-color: #FFFFFF;
+    border: 1px solid #AAAAAA;
     clear: both;
+    height: 54px;
+    margin-top: 8px;
 }
 
 
 #bookmarks .bookmark .left {
-	width: 368px;
-	height: 54px;
-	color: #444;
+    color: #444444;
+    float: left;
+    height: 54px;
+    width: 371px;
 }
 
 
@@ -122,18 +124,11 @@ body {
 }
 
 #bookmarks .bookmark .right {
-	width: 10px;
-	position: relative;
-	left: 397px;
-	top: -24px;
-	float: left;
-	width: 30;
-	height: 54;
-	padding-left: 2px;
-	border-left: 1px #AAA solid;
-	margin: -30;
+    border-left: 1px solid #AAAAAA;
+    float: left;
+    height: 54px;
+    width: 26px;
 }
-
 
 #bookmarks .bookmark .right button.remove  {
 	background-image: url(remove.png);
