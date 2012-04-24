@@ -1,62 +1,66 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Wakmarks</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Wakmarks</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="lib/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="js/Bookmark.js"></script>
+    <script type="text/javascript" src="js/BookmarkController.js"></script>
 </head>
 <body>
-	<div id="header">
-		<div id="searchbox">
-			<input type="text" name="search" id="search"
-				placeholder="Filtern oder Hinzufügen..." />
-		</div>
-	</div>
-	<div id="edit-box">
-		<div class="head">&gt; Einen neuen Bookmark hinzufügen</div>
-		<div class="body">
-			<form id="edit-form">
-				<div class="left">
-					<div class="field-container">
-						<div class="label">URL:</div>
-						<div class="field">
-							<input type="text" name="url" placeholder="Hier URL eintippen" />
-						</div>
-					</div>
-					<div class="field-container">
-						<div class="label">Name:</div>
-						<div class="field">
-							<input type="text" name="name" placeholder="Hier Name eintippen" />
-						</div>
-					</div>
-				</div>
-				<div class="right">
-					<button class="cancel">&nbsp;</button>
-					<button class="apply">&nbsp;</button>
-				</div>
-			</form>
-		</div>
-	</div>
-	<div id="bookmarks">
-		<div class="bookmark">
-			<div class="left">
-				<div class="name">Ein Bookmark Name</div>
-				<div class="url">http://www.test.com/articlekategory/artikel.html</div>
-			</div>
-			<div class="right">
-				<button class="remove">&nbsp;</button>
-				<button class="read">&nbsp;</button>
-			</div>
-		</div>
-		<div class="bookmark">
-			<div class="left">
-				<div class="name">Ein Unread Bookmark Name</div>
-				<div class="url">http://www.test.com/articlekategory/artikel.html</div>
-			</div>
-			<div class="right">
-				<button class="remove">&nbsp;</button>
-				<button class="unread">&nbsp;</button>
-			</div>
-		</div>
-	</div>
+<div id="header">
+    <div class="searchbox">
+        <form>
+            <input type="text" name="search" required
+                   placeholder="Filtern oder Hinzufügen..."/>
+        </form>
+    </div>
+</div>
+<div id="edit-box">
+    <div class="head">&gt; Einen neuen Bookmark hinzufügen</div>
+    <div class="body">
+        <form>
+            <div class="left">
+                <div class="field-container">
+                    <div class="label">URL:</div>
+                    <div class="field">
+                        <input type="text" name="url" placeholder="Hier URL eintippen" required/>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="label">Name:</div>
+                    <div class="field">
+                        <input type="text" name="name" placeholder="Hier Name eintippen" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <button class="cancel">&nbsp;</button>
+                <button class="apply">&nbsp;</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="bookmarks">
+    <script type="x-text/template" class="template">
+        <div class="bookmark">
+            <div class="left">
+                <div class="name">${name}</div>
+                <div class="url">${url}</div>
+            </div>
+            <div class="right">
+                <button class="remove">&nbsp;</button>
+                <button class="read">&nbsp;</button>
+            </div>
+        </div>
+    </script>
+</div>
 </body>
+
+<script type="text/javascript">
+    new BookmarkController(jQuery)
+</script>
+
 </html>
