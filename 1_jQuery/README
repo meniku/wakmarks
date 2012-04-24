@@ -1,0 +1,20 @@
+HOW-TO:
+-------
+
+Create IDEA-Project:
+ $ mvn idea:idea
+
+Create Eclipse-Project:
+ $ mvn eclipse:eclipse
+
+Keep JS-Files compiled when modifing the coffee-sources:
+ $ coffee -bwco WebContent/js src/main/coffee
+
+Keep Spec-Files compiled when modifing the coffee-sources:
+ $ coffee -bwc -o WebContent/spec src/test/coffee
+
+Run the SpecTest:
+ $ open WebContent/SpecRunner.html
+
+Run the App:
+ $ open WebContent/index.html
