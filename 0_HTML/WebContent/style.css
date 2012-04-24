@@ -25,13 +25,13 @@ body {
     font-family: sans;
 }
 
-#edit-form {
-	margin: 0px;
-}
-
 #edit-box {
     border: 1px #AAA solid;
     background-color: #FFF;
+}
+
+#edit-box form {
+	margin: 0px;
 }
 
 #edit-box .head {
