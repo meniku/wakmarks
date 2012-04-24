@@ -2,7 +2,6 @@ button {
 	background: none;
 }
 
-
 #header {
 	background-image: url(logo.png);
 	background-repeat: no-repeat;
@@ -10,13 +9,13 @@ button {
 	height: 124px;
 }
 
-#searchbox {
+#header .searchbox {
     left: 117px;
 	top: 83px;
 	position: relative;
 }
 
-#searchbox input {
+#header input {
 	width: 268px;
 }
 
@@ -32,6 +31,10 @@ body {
 
 #edit-box form {
 	margin: 0px;
+}
+
+#edit-box input:required:invalid, #edit-box input:focus:invalid {
+   border-color: #f00;
 }
 
 #edit-box .head {
