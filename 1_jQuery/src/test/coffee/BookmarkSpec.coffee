@@ -48,6 +48,20 @@ describe "Bookmark", ->
       bookmark.destroy()
       expect(Bookmark.records).toEqual({})
 
+    it "should not create twice", ->
+      bookmark.create()
+      expect(-> bookmark.create()).toThrow("record already exists")
+
+    it "should not destroy twice", ->
+      bookmark.create()
+      bookmark.destroy()
+      expect(-> bookmark.destroy()).toThrow("record not yet exists")
+
+    it "should not update", ->
+      bookmark.create()
+      bookmark.destroy()
+      expect(-> bookmark.update()).toThrow("record not yet exists")
+
   describe "multiple instances", ->
     bookmark1 = null
     bookmark2 = null

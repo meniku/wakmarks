@@ -48,10 +48,30 @@ describe("Bookmark", function() {
         1: bookmark
       });
     });
-    return it("should not be contained in records", function() {
+    it("should not be contained in records", function() {
       bookmark.create();
       bookmark.destroy();
       return expect(Bookmark.records).toEqual({});
+    });
+    it("should not create twice", function() {
+      bookmark.create();
+      return expect(function() {
+        return bookmark.create();
+      }).toThrow("record already exists");
+    });
+    it("should not destroy twice", function() {
+      bookmark.create();
+      bookmark.destroy();
+      return expect(function() {
+        return bookmark.destroy();
+      }).toThrow("record not yet exists");
+    });
+    return it("should not update", function() {
+      bookmark.create();
+      bookmark.destroy();
+      return expect(function() {
+        return bookmark.update();
+      }).toThrow("record not yet exists");
     });
   });
   return describe("multiple instances", function() {

@@ -14,9 +14,13 @@ class Bookmark
   
   create : ->
     @newRecord = false
+    if Bookmark.records[@id]
+      throw "record already exists"
     Bookmark.records[@id] = this
 
   update : ->
+    if !Bookmark.records[@id]
+      throw "record not yet exists"
     Bookmark.records[@id] = this
 
   save : ->
@@ -26,4 +30,6 @@ class Bookmark
       @update()  
 
   destroy : ->
+    if !Bookmark.records[@id]
+      throw "record not yet exists"
     delete Bookmark.records[@id]

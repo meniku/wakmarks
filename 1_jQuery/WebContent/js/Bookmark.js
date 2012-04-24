@@ -26,10 +26,16 @@ Bookmark = (function() {
 
   Bookmark.prototype.create = function() {
     this.newRecord = false;
+    if (Bookmark.records[this.id]) {
+      throw "record already exists";
+    }
     return Bookmark.records[this.id] = this;
   };
 
   Bookmark.prototype.update = function() {
+    if (!Bookmark.records[this.id]) {
+      throw "record not yet exists";
+    }
     return Bookmark.records[this.id] = this;
   };
 
@@ -42,6 +48,9 @@ Bookmark = (function() {
   };
 
   Bookmark.prototype.destroy = function() {
+    if (!Bookmark.records[this.id]) {
+      throw "record not yet exists";
+    }
     return delete Bookmark.records[this.id];
   };
 
