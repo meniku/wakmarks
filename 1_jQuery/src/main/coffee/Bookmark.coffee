@@ -11,6 +11,7 @@ class @Bookmark
 
   constructor: (@id, @name, @url) ->
     @newRecord = true
+    @read = false
   
   create : ->
     @newRecord = false

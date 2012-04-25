@@ -22,6 +22,7 @@
       this.name = name;
       this.url = url;
       this.newRecord = true;
+      this.read = false;
     }
 
     Bookmark.prototype.create = function() {

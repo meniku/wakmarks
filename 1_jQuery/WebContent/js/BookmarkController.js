@@ -22,6 +22,8 @@
       $("form", this.editBox).submit($.proxy(this.onEditBoxFormSubmit, this));
       $(".cancel", this.editBox).click($.proxy(this.onEditBoxCancelClick, this));
       $("form input", this.editBox).keydown($.proxy(this.onEditFormInputKeyDown, this));
+      this.bookmarks.on("click", ".read", $.proxy(this.onBookmarkReadClick, this));
+      this.bookmarks.on("click", ".unread", $.proxy(this.onBookmarkReadClick, this));
       $("input", this.header).focus();
     }
 
@@ -59,7 +61,7 @@
     };
 
     BookmarkController.prototype.onEditBoxFormSubmit = function(event) {
-      var bookmark, editForm, nameField, urlField;
+      var bookmark, editForm, nameField, newElement, urlField;
       event.preventDefault();
       editForm = $('form', this.editBox);
       urlField = $(editForm[0].elements['url']);
@@ -70,7 +72,14 @@
       Bookmark(bookmark = new Bookmark(this.currentID++, nameField.val(), urlField.val()));
       bookmark.save();
       this.closeEditBox();
-      return this.addBookmarkView(bookmark);
+      newElement = $.tmpl("bookmark", [
+        {
+          id: bookmark.id,
+          name: bookmark.name,
+          url: bookmark.url
+        }
+      ]);
+      return newElement.prependTo(this.bookmarks);
     };
 
     BookmarkController.prototype.onEditBoxCancelClick = function(event) {
@@ -87,19 +96,23 @@
       return $("input", this.header).focus();
     };
 
-    BookmarkController.prototype.addBookmarkView = function(bookmark) {
-      var newElement;
-      newElement = $.tmpl("bookmark", [
-        {
-          name: bookmark.name,
-          url: bookmark.url
-        }
-      ]);
-      return newElement.prependTo(this.bookmarks);
-    };
-
     BookmarkController.prototype.isUrl = function(value) {
       return value.indexOf("http://") === 0;
+    };
+
+    BookmarkController.prototype.onBookmarkReadClick = function(event) {
+      var bookmark, view;
+      view = $(event.target).parents(".bookmark");
+      bookmark = Bookmark.find(view.data('id'));
+      bookmark.read = !bookmark.read;
+      bookmark.save();
+      if (bookmark.read) {
+        $(event.target).addClass('read');
+        return $(event.target).removeClass('unread');
+      } else {
+        $(event.target).addClass('unread');
+        return $(event.target).removeClass('read');
+      }
     };
 
     return BookmarkController;
