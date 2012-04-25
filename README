@@ -1,0 +1,11 @@
+Wakmarks is a simple browser-based bookmark-manager which stores it's state completly in the browser.
+I create this project in different versions using different mvc-frameworks. The goal is to get a feeling for the mvc-frameworks and to be able to compare them.
+
+Further description (german) : http://blog.nkuebler.de/2012/04/js-labs-wakmarks-pt-1/
+
+Currently the following Versions exist:
+
+0_HTML : Static version with no logic.
+
+1_jQuery : Simple version with just jQuery, Coffeescript, Jasmine. No complete MVC framework. Further description (german) : http://blog.nkuebler.de/2012/04/sauber-testen-mit-jasmine-und-coffeescript
+
