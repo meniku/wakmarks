@@ -82,7 +82,7 @@ body {
     width: 294px;
 }
 
-#edit-box button.apply  {
+#edit-box .apply  {
 	background-image: url(checkbox.png);
 	width: 34px;
 	height: 34px;

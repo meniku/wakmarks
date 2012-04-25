@@ -1,6 +1,6 @@
 # http://jashkenas.github.com/coffee-script/
 
-class Bookmark
+class @Bookmark
   @records = {}
 
   @reset : ->

@@ -8,10 +8,10 @@ Create Eclipse-Project:
  $ mvn eclipse:eclipse
 
 Keep JS-Files compiled when modifing the coffee-sources:
- $ coffee -bwco WebContent/js src/main/coffee
+ $ coffee -wco WebContent/js src/main/coffee
 
 Keep Spec-Files compiled when modifing the coffee-sources:
- $ coffee -bwc -o WebContent/spec src/test/coffee
+ $ coffee -wc -o WebContent/spec src/test/coffee
 
 Run the SpecTest:
  $ open WebContent/SpecRunner.html
