@@ -24,6 +24,7 @@
       $("form input", this.editBox).keydown($.proxy(this.onEditFormInputKeyDown, this));
       this.bookmarks.on("click", ".read", $.proxy(this.onBookmarkReadClick, this));
       this.bookmarks.on("click", ".unread", $.proxy(this.onBookmarkReadClick, this));
+      this.bookmarks.on("click", ".remove", $.proxy(this.onBookmarkRemoveClick, this));
       $("input", this.header).focus();
     }
 
@@ -113,6 +114,14 @@
         $(event.target).addClass('unread');
         return $(event.target).removeClass('read');
       }
+    };
+
+    BookmarkController.prototype.onBookmarkRemoveClick = function(event) {
+      var bookmark, view;
+      view = $(event.target).parents(".bookmark");
+      bookmark = Bookmark.find(view.data('id'));
+      bookmark.destroy();
+      return view.remove();
     };
 
     return BookmarkController;

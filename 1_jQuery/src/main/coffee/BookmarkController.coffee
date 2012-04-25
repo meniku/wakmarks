@@ -21,6 +21,7 @@ class @BookmarkController
     $("form input", @editBox).keydown($.proxy(@onEditFormInputKeyDown, this))
     @bookmarks.on("click", ".read", $.proxy(@onBookmarkReadClick, this));
     @bookmarks.on("click", ".unread", $.proxy(@onBookmarkReadClick, this));
+    @bookmarks.on("click", ".remove", $.proxy(@onBookmarkRemoveClick, this));
 
     # Misc initialization
     $("input", @header).focus()
@@ -98,3 +99,13 @@ class @BookmarkController
     else
       $(event.target).addClass('unread')
       $(event.target).removeClass('read')
+
+  onBookmarkRemoveClick : (event) ->
+    view = $(event.target).parents(".bookmark")
+
+    # remove the model ...
+    bookmark = Bookmark.find(view.data('id'))
+    bookmark.destroy()
+
+    # ... and the view
+    view.remove()
