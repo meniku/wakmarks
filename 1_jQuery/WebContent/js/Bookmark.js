@@ -17,6 +17,17 @@
       })();
     };
 
+    Bookmark.all = function() {
+      var bookmark, id, _ref, _results;
+      _ref = this.records;
+      _results = [];
+      for (id in _ref) {
+        bookmark = _ref[id];
+        _results.push(bookmark);
+      }
+      return _results;
+    };
+
     function Bookmark(id, name, url) {
       this.id = id;
       this.name = name;

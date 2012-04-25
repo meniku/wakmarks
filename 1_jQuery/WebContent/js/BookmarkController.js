@@ -19,6 +19,7 @@
       this.bookmarks = $('#bookmarks');
       $.template("bookmark", $("#bookmarks .template").html());
       $("form", this.header).submit($.proxy(this.onHeaderFormSubmit, this));
+      $("form input", this.header).keydown($.proxy(this.onHeaderFormKeyDown, this));
       $("form", this.editBox).submit($.proxy(this.onEditBoxFormSubmit, this));
       $(".cancel", this.editBox).click($.proxy(this.onEditBoxCancelClick, this));
       $("form input", this.editBox).keydown($.proxy(this.onEditFormInputKeyDown, this));
@@ -27,6 +28,24 @@
       this.bookmarks.on("click", ".remove", $.proxy(this.onBookmarkRemoveClick, this));
       $("input", this.header).focus();
     }
+
+    BookmarkController.prototype.onHeaderFormKeyDown = function(event) {
+      return setTimeout(function() {
+        var bookmark, value, _i, _len, _ref, _results;
+        value = $(event.currentTarget).val();
+        _ref = Bookmark.all();
+        _results = [];
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          bookmark = _ref[_i];
+          if (bookmark.name.indexOf(value) > -1 || bookmark.url.indexOf(value) > -1) {
+            _results.push($("[data-id=" + bookmark.id + "]", this.bookmarks).show());
+          } else {
+            _results.push($("[data-id=" + bookmark.id + "]", this.bookmarks).hide());
+          }
+        }
+        return _results;
+      }, 0);
+    };
 
     BookmarkController.prototype.onEditFormInputKeyDown = function(event) {
       if (event.which === KEYCODE_ENTER || event.keyCode === KEYCODE_ENTER) {

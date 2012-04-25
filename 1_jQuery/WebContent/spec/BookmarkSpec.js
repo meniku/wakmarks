@@ -96,8 +96,8 @@
       it("should find bookmark 2", function() {
         return expect(Bookmark.find(2)).toEqual(bookmark2);
       });
-      return it("should contain all instances", function() {
-        return expect();
+      return it("should return all bookmarks", function() {
+        return expect(Bookmark.all()).toEqual([bookmark1, bookmark2, bookmark3]);
       });
     });
   });

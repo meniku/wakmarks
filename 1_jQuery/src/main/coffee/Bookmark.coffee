@@ -9,6 +9,10 @@ class @Bookmark
   @find : (id) ->
     @records[id] || throw "unknown record"
 
+  @all : ->
+    for id, bookmark of @records
+      bookmark
+
   constructor: (@id, @name, @url) ->
     @newRecord = true
     @read = false

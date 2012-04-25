@@ -81,5 +81,5 @@ describe "Bookmark", ->
     it "should find bookmark 2", ->
       expect(Bookmark.find(2)).toEqual(bookmark2)
 
-    it "should contain all instances", ->
-      expect()
+    it "should return all bookmarks", ->
+      expect(Bookmark.all()).toEqual([bookmark1, bookmark2, bookmark3])

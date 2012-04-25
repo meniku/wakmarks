@@ -16,6 +16,7 @@ class @BookmarkController
 
     # Events
     $("form", @header).submit($.proxy(@onHeaderFormSubmit, this))
+    $("form input", @header).keydown($.proxy(@onHeaderFormKeyDown, this))
     $("form", @editBox).submit($.proxy(@onEditBoxFormSubmit, this))
     $(".cancel", @editBox).click($.proxy(@onEditBoxCancelClick, this))
     $("form input", @editBox).keydown($.proxy(@onEditFormInputKeyDown, this))
@@ -25,6 +26,16 @@ class @BookmarkController
 
     # Misc initialization
     $("input", @header).focus()
+
+  onHeaderFormKeyDown : (event) ->
+    setTimeout( ->
+      value = $(event.currentTarget).val()
+      for bookmark in Bookmark.all()
+        if(bookmark.name.indexOf(value) > -1 || bookmark.url.indexOf(value) > -1)
+          $("[data-id=#{bookmark.id}]", @bookmarks).show()
+        else
+          $("[data-id=#{bookmark.id}]", @bookmarks).hide()
+    , 0)
 
   onEditFormInputKeyDown : (event) ->
     if event.which == KEYCODE_ENTER || event.keyCode == KEYCODE_ENTER
@@ -66,6 +77,7 @@ class @BookmarkController
     @closeEditBox()
 
     # .. and the view
+    # TODO: add at correct position! (bookmarks should be sorted by name)
     newElement = $.tmpl("bookmark", [
       {id:bookmark.id, name:bookmark.name, url:bookmark.url}
     ]);
