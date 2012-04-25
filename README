@@ -5,8 +5,7 @@ Further description (german) : http://blog.nkuebler.de/2012/04/js-labs-wakmarks-
 
 Currently the following Versions exist:
 
-* 0_HTML : Static version with no logic.
+0_HTML : Static version with no logic.
 
-* 1_jQuery : Simple version with just jQuery, Coffeescript, Jasmine. No complete MVC framework.
-    further description (german) : http://blog.nkuebler.de/2012/04/sauber-testen-mit-jasmine-und-coffeescript
+1_jQuery : Simple version with just jQuery, Coffeescript, Jasmine. No complete MVC framework. Further description (german) : http://blog.nkuebler.de/2012/04/sauber-testen-mit-jasmine-und-coffeescript
 
