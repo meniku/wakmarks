@@ -1,0 +1,59 @@
+<html ng-app>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Wakmarks</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="lib/angular-1.0.0rc6.min.js"></script>
+    <script type="text/javascript" src="lib/underscore-min.js"></script>
+    <script type="text/javascript" src="js/BookmarkCtrl.js"></script>
+</head>
+<body>
+<div ng-controller="BookmarkCtrl">
+    <div id="header">
+        <div class="searchbox" ng-submit>
+            <form>
+                <input type="text" name="search" required ng-model="searchText"
+                       placeholder="Filtern oder Hinzufügen..."/>
+            </form>
+        </div>
+    </div>
+    <div id="edit-box" style="{{editBoxStyle}}">
+        <div class="head">&gt; Einen neuen Bookmark hinzufügen</div>
+        <div class="body">
+            <form>
+                <div class="left">
+                    <div class="field-container">
+                        <div class="label">URL:</div>
+                        <div class="field">
+                            <input type="text" name="url" placeholder="Hier URL eintippen" required/>
+                        </div>
+                    </div>
+                    <div class="field-container">
+                        <div class="label">Name:</div>
+                        <div class="field">
+                            <input type="text" name="name" placeholder="Hier Name eintippen" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <button class="cancel">&nbsp;</button>
+                    <button class="apply">&nbsp;</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="bookmarks">
+        <div class="bookmark" ng-repeat="bookmark in bookmarks | filter:searchText" data-id="{{bookmark.id}}">
+            <div class="left">
+                <div class="name">{{bookmark.name}}</div>
+                <div class="url">{{bookmark.url}}</div>
+            </div>
+            <div class="right">
+                <button class="remove">&nbsp;</button>
+                <button class="{{getBookmarkReadClass(bookmark)}}" ng-click="onBookmarkReadClick(bookmark)">&nbsp;</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

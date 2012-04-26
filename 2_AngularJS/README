@@ -1,0 +1,14 @@
+HOW-TO:
+-------
+
+Create IDEA-Project:
+ $ mvn idea:idea
+
+Create Eclipse-Project:
+ $ mvn eclipse:eclipse
+
+Keep JS-Files compiled when modifing the coffee-sources:
+ $ coffee -wco WebContent/js src/main/coffee
+
+Run the App:
+ $ open WebContent/index.html
