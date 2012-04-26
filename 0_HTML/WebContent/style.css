@@ -1,22 +1,22 @@
 button {
-	background: none;
+    background: none;
 }
 
 #header {
-	background-image: url(logo.png);
-	background-repeat: no-repeat;
-	width: 400px;
-	height: 124px;
+    background-image: url(logo.png);
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 124px;
 }
 
 #header .searchbox {
     left: 117px;
-	top: 83px;
-	position: relative;
+    top: 83px;
+    position: relative;
 }
 
 #header input {
-	width: 268px;
+    width: 268px;
 }
 
 body {
@@ -30,22 +30,22 @@ body {
 }
 
 #edit-box form {
-	margin: 0px;
+    margin: 0px;
 }
 
 #edit-box input:required:invalid, #edit-box input:focus:invalid {
-   border-color: #f00;
+    border-color: #f00;
 }
 
 #edit-box .head {
-	padding: 4px;
-	border-bottom: 1px #DDD solid;
-	color: #555;
-	background-color: #EEE;
+    padding: 4px;
+    border-bottom: 1px #DDD solid;
+    color: #555;
+    background-color: #EEE;
 }
 
 #edit-box .body {
-	height: 68px;
+    height: 68px;
 }
 
 #edit-box .body .left {
@@ -66,12 +66,12 @@ body {
 }
 
 #edit-box .field-container .label {
-	width: 40px;
-	padding:6px;
-	float: left;
-	text-align: right;
-	color: gray;
-	font-size: 12px;
+    width: 40px;
+    padding: 6px;
+    float: left;
+    text-align: right;
+    color: gray;
+    font-size: 12px;
 }
 
 #edit-box .field-container .field {
@@ -81,21 +81,20 @@ body {
     width: 294px;
 }
 
-#edit-box button.apply  {
-	background-image: url(checkbox.png);
-	width: 34px;
-	height: 34px;
-	border: 1px #DDD solid;
+#edit-box button.apply {
+    background-image: url(checkbox.png);
+    width: 34px;
+    height: 34px;
+    border: 1px #DDD solid;
 }
 
-#edit-box button.cancel  {
-	background-image: url(cancel.png);
-	background-position: -1 -1;
-	width: 34px;
-	height: 34px;
-	border: 1px #DDD solid;
+#edit-box button.cancel {
+    background-image: url(cancel.png);
+    background-position: -1 -1;
+    width: 34px;
+    height: 34px;
+    border: 1px #DDD solid;
 }
-
 
 #bookmarks {
 }
@@ -108,7 +107,6 @@ body {
     margin-top: 8px;
 }
 
-
 #bookmarks .bookmark .left {
     color: #444444;
     float: left;
@@ -116,11 +114,10 @@ body {
     width: 371px;
 }
 
-
 #bookmarks .bookmark .left .name {
-  padding: 6px;
-  padding-bottom: 2px;
-  font-size: 20px;
+    padding: 6px;
+    padding-bottom: 2px;
+    font-size: 20px;
 }
 
 #bookmarks .bookmark .left .url {
@@ -137,28 +134,28 @@ body {
     width: 26px;
 }
 
-#bookmarks .bookmark .right button.remove  {
-	background-image: url(remove.png);
-	background-position: -4 -4;
-	width: 26px;
-	height: 26px;
-	border: none;
-	margin-bottom: 1px;
-	border-bottom: 1px #AAA solid;
+#bookmarks .bookmark .right button.remove {
+    background-image: url(remove.png);
+    background-position: -4 -4;
+    width: 26px;
+    height: 26px;
+    border: none;
+    margin-bottom: 1px;
+    border-bottom: 1px #AAA solid;
 }
 
-#bookmarks .bookmark .right button.read  {
-	background-image: url(read.png);
-	background-position: -4 -4;
-	width: 26px;
-	height: 26px;
-	border: none;
+#bookmarks .bookmark .right button.read {
+    background-image: url(read.png);
+    background-position: -4 -4;
+    width: 26px;
+    height: 26px;
+    border: none;
 }
 
-#bookmarks .bookmark .right button.unread  {
-	background-image: url(unread.png);
-	background-position: -4 -4;
-	width: 26px;
-	height: 26px;
-	border: none;
+#bookmarks .bookmark .right button.unread {
+    background-image: url(unread.png);
+    background-position: -4 -4;
+    width: 26px;
+    height: 26px;
+    border: none;
 }
