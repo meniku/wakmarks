@@ -1,0 +1,14 @@
+HOW-TO:
+-------
+
+Create IDEA-Project:
+ $ mvn idea:idea
+
+Create Eclipse-Project:
+ $ mvn eclipse:eclipse
+
+Run Batman server:
+ $ batman server
+
+Run the App:
+ $ open http://127.0.0.1:1047/

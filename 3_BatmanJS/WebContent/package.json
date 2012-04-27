@@ -1,0 +1,19 @@
+{
+  "author": "Nils <nils.kuebler@memonews.com>",
+  "name": "Wakmarks",
+  "description": "Justing testingout batman",
+  "version": "0.1.0",
+  "main": "build/app.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "batman": "~>0.1.0"
+  },
+  "devDependencies": {},
+  "batman": {
+    "appName": "Wakmarks",
+    "build": true,
+    "buildDir": "./build"
+  }
+}

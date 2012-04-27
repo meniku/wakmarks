@@ -1,0 +1,45 @@
+<div id="header">
+    <div class="searchbox">
+        <form>
+            <input type="text" name="search" required
+                   placeholder="Filtern oder Hinzufügen..."/>
+        </form>
+    </div>
+</div>
+<div id="edit-box">
+    <div class="head">&gt; Einen neuen Bookmark hinzufügen</div>
+    <div class="body">
+        <form>
+            <div class="left">
+                <div class="field-container">
+                    <div class="label">URL:</div>
+                    <div class="field">
+                        <input type="text" name="url" placeholder="Hier URL eintippen" required/>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="label">Name:</div>
+                    <div class="field">
+                        <input type="text" name="name" placeholder="Hier Name eintippen" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <button class="cancel">&nbsp;</button>
+                <button class="apply">&nbsp;</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="bookmarks" data-foreach-bookmark="Bookmark.all">
+    <div class="bookmark">
+        <div class="left">
+            <div class="name" data-bind="bookmark.name"></div>
+            <div class="url" data-bind="bookmark.url"></div>
+        </div>
+        <div class="right">
+            <button class="remove">&nbsp;</button>
+            <button class="read" data-event-click="controller.readClicked">&nbsp;</button>
+        </div>
+    </div>
+</div>
