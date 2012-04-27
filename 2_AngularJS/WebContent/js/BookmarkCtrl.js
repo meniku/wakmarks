@@ -13,6 +13,21 @@
           name: "one Bookmark",
           url: "http://some-url.de",
           read: false
+        }, {
+          id: 2,
+          name: "one Bookmark",
+          url: "http://some-url.de",
+          read: false
+        }, {
+          id: 3,
+          name: "one Bookmark",
+          url: "http://some-url.de",
+          read: false
+        }, {
+          id: 4,
+          name: "one Bookmark",
+          url: "http://some-url.de",
+          read: false
         }
       ];
       this.$scope.editBoxStyle = "display: none;";
